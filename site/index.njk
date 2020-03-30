@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div class="h-almost-full flex flex-col justify-center items-center">
+  <h1 class="cmp-h1">{{general.site_title}}</h1>
+  {% if general.site_subtitle %}
+    <p>{{general.site_subtitle}}</p>
+  {% endif %}
+</div>
+
+
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>

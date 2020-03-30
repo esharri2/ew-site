@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cmp-button {
+  @apply text-white bg-black p-4 inline-block;
+}
+
+.cmp-caption {
+  @apply italic;
+}
+
+.cmp-h1 {
+  @apply font-title text-4xl leading-none my-4;
+}
+
+.cmp-h2 {
+  @apply font-title text-2xl leading-none my-4;
+}
+
+@screen lg {
+  .cmp-h1 {
+    @apply text-6xl;
+  }
+}
+
+.cmp-input {
+  @apply block border-black border-solid border w-full;
+}
+
+.cmp-link-button {
+  @apply text-white bg-black p-4 inline-block;
+}
+
+.cmp-markdown p {
+  @apply py-4;
+}
+
+.cmp-markdown ul {
+  @apply ml-4;
+}
+
+.cmp-markdown li {
+  @apply list-disc;
+}
+
+/* General */
+
+svg {
+  max-width: 100%;
+  max-height: 100%;
+}

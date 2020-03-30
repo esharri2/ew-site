@@ -1,0 +1,246 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+media_folder: "site/media/uploads" # Media files will be stored in the repo under images/uploads
+public_folder: "/media"
+
+# CMS UI CONFIG
+show_preview_links: false
+publish_mode: editorial_workflow
+
+# COLLECTIONS
+collections: # A list of collections the CMS should be able to edit
+  - name: "general"
+    label: "General"
+    description:
+      "Basic information about your site, such as title and description."
+    files:
+      - name: "general"
+        label: "General site information"
+        file: "site/data/general.json"
+        fields:
+          - {
+              label: "Title",
+              name: "site_title",
+              widget: "string",
+              required: true,
+            }
+          - {
+              label: "Domain name",
+              name: "site_domain",
+              widget: "string",
+              required: true,
+            }
+          - {
+              label: "Subtitle",
+              name: "site_subtitle",
+              widget: "string",
+              required: false,
+            }
+  - name: "bio"
+    label: "Bio"
+    description: "Biographical information."
+    files:
+      - name: "bio"
+        label: "Bio"
+        format: "frontmatter"
+        file: "site/about.md"
+        fields:
+          - label: "Author image"
+            name: "author_image"
+            widget: "object"
+            required: false
+            fields:
+              - {
+                  label: "Author image",
+                  name: "file",
+                  widget: "image",
+                  required: false,
+                }
+              - {
+                  label: "Author image byline",
+                  name: "byline",
+                  widget: "string",
+                  required: false,
+                }
+          - { label: Title, name: title, widget: string }
+          - label: "Bio"
+            name: "body"
+            widget: "markdown"
+            required: false
+            buttons:
+              [
+                "bold",
+                "italic",
+                "link",
+                "quote",
+                "bulleted-list",
+                "numbered-list",
+              ]
+  - name: "contact"
+    label: "Contact information"
+    description: "Contact information and social media links."
+    files:
+      - name: "contact"
+        label: "Contact information"
+        file: "site/data/contact.json"
+        fields:
+          - {
+              label: "Main contact email",
+              name: "main_email",
+              widget: "string",
+              hint:
+                "The contact form will send email to this address. This address
+                won't appear in any way on the website.",
+            }
+          - label: "Other contact emails"
+            description:
+              "Emails for special cases, such as bookings or reviews."
+            name: "other_emails"
+            widget: "list"
+            fields:
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Purpose", name: "purpose", widget: "string" }
+      - name: "social"
+        label: "Social media links"
+        file: "site/data/socialMedia.json"
+        fields:
+          - {
+              label: "Facebook",
+              name: "facebook_url",
+              widget: "string",
+              hint: "e.g. https://www.facebook.com/yourpage",
+            }
+          - {
+              label: "Twitter",
+              name: "twitter_url",
+              widget: "string",
+              hint: "e.g. https://www.twitter.com/youraccount",
+            }
+          - {
+              label: "Instagram",
+              name: "instagram_url",
+              widget: "string",
+              hint: "e.g. https://www.instagram.com/youraccount",
+            }
+  - name: "posts"
+    label: "News items"
+    label_singular: "news item"
+    folder: "site/posts"
+    create: true
+    description: "Updates and announcements."
+    fields: # The fields each document in this collection have
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Publish date"
+        name: "date"
+        widget: "datetime"
+        dateFormat: "YYYY-MM-DD"
+        format: "YYYY-MM-DD"
+      - label: "Cover image"
+        name: "image"
+        widget: "image"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        buttons:
+          ["bold", "italic", "link", "quote", "bulleted-list", "numbered-list"]
+  - name: "books"
+    label: "Books"
+    label_singular: "book"
+    folder: "site/books"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - {
+          label: "Publisher",
+          name: "publisher",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Genre or type",
+          name: "genre",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Synopsis", name: "synopsis", widget: "text", required: false }
+      - {
+          label: "Cover image",
+          name: "cover",
+          widget: "image",
+          required: true,
+        }
+      - {
+          label: "Publication date",
+          name: "date",
+          widget: "datetime",
+          dateFormat: "YYYY-MM-DD",
+          format: "YYYY-MM-DD",
+          required: true
+        }
+      - {
+          label: "Purchase link",
+          name: "purchase_link",
+          widget: "string",
+          required: false,
+        }
+      - label: "Blurbs"
+        name: "blurbs"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Text", name: "text", widget: "text" }
+          - { label: "Attribution", name: "attribution", widget: "string" }
+  - name: "publications"
+    label: "Other publications"
+    label_singular: "publication"
+    description: "Non-book publications"
+    folder: "site/publications"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Publisher",
+          name: "publisher",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - {
+          label: "Genre or type",
+          name: "genre",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Link", name: "link", widget: "string", required: false }
+  - name: "events"
+    label: "Events"
+    label_singular: "event"
+    description: "Schedule of events"
+    folder: "site/events"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          dateFormat: "YYYY-MM-DD",
+          timeFormat: "hh:mm a",
+        }

@@ -1,0 +1,31 @@
+---
+layout: default
+eleventyNavigation:
+  key: Books
+  order: 2
+pagination:
+  data: collections.book
+  size: 36
+  alias: books
+---
+
+<h1 class="cmp-h1">Books</h1>
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-3 row-gap-6">
+  {% for book in books | reverse %}
+    <div>
+      <a class="group block relative" href="/books/{{book.data.title | slug}}">
+        <img 
+          class="w-full md:w-auto" 
+          srcset="{% srcset book.data.cover %}" 
+          src="{{book.data.cover}}"
+          sizes="(min-width: 767px) 250px, 100vw" 
+          alt="{{book.data.title}} cover art" />
+        <div class="absolute flex justify-center items-center text-xl text-white bg-black inset-x-0 top-0 h-0 opacity-0 group-hover:h-full group-hover:opacity-75 transition-height duration-200 ease-out ">Learn more</div>
+      </a>
+      <div class="text-xl text-center">{{book.data.title}}</div>
+    </div>
+  {% endfor %}
+</div>
+
+{% include "./includes/components/pagination.njk" %}

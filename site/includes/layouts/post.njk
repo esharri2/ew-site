@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="mt-4">
+<h1 class="cmp-h2">{{ title }}</h1>
+{% if date %}
+    <p>{{date | prettyDate}}</p>
+{% endif %}
+{% if image %}
+    <img class="my-4" srcset="{% srcset image %}" src="{{image}}" alt=""/>
+{% endif %}
+<div class="cmp-markdown">
+    {{ content | safe}}
+</div>
+</article>
