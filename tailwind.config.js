@@ -3,13 +3,18 @@ const headerHeight = "5rem";
 module.exports = {
   theme: {
     colors: {
-      white: "#E7ECEF",
-      black: "#333232",
+      // white: "#f1f2ed",
+      white: "#f5f3ef",
+      yellow: "#ede38a",
+      black: "#232010",
+      blue: "#517789",
+      brown: "#5c482b",
+      green: "#76833e",
       transparent: "transparent"
     },
     fontFamily: {
-      title: ["Ultra", "Times New Roman", "serif"],
-      body: ["Source Sans Pro", "Helvetica", "san serif"]
+      title: ["Alegreya Sans", "Times New Roman", "serif"],
+      body: ["Lora", "Helvetica", "san serif"]
     },
     extend: {
       opacity: {
@@ -17,11 +22,11 @@ module.exports = {
         "90": ".9"
       },
       spacing: {
-        "almost-full": "80vh",
-        "header" : headerHeight
+        "almost-full": "90vh",
+        header: headerHeight
       },
       inset: {
-        "headerHeight" : headerHeight
+        headerHeight: headerHeight
       },
       transitionProperty: {
         height: "height",

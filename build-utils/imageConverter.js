@@ -23,13 +23,12 @@ const createImages = async image => {
       .resize(size.size)
       .toFile(`./dist/media/${name}-${size.tag}${ext}`)
       .then(() => {
-        console.log("success!");
+        return true;
       });
   });
 };
 
 const init = () => {
-  console.log("Init image resizing....");
   const imageNames = getImageNames();
   imageNames.forEach(image => {
     createImages(image);
