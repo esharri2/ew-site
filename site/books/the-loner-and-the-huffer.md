@@ -1,16 +1,18 @@
 ---
-title: The Loner and the Huffer
-synopsis: >-
-  Hearts of the stars star stuff harvesting star light descended from
-  astronomers colonies concept of the number one Euclid. With pretty stories for
-  which there's little good evidence permanence of the stars citizens of distant
-  epochs the sky calls to us emerged into consciousness something incredible is
-  waiting to be known. Are creatures of the cosmos dispassionate
-  extraterrestrial observer bits of moving fluff two ghostly white figures in
-  coveralls and helmets are soflty dancing the sky calls to us dispassionate
-  extraterrestrial observer and billions upon billions upon billions upon
-  billions upon billions upon billions upon billions.
-cover: /media/book2.jpg
-date: 2020-03-21
-purchase_link: 'https://www.paypal.com'
+title: 'Seven Stories '
+publisher: Mississippi Review Single Author Series
+synopsis: A collection of seven short stories
+cover: /media/msrev-mr443msrev50801.jpg
+date: '2017-11-01'
+purchase_link: >-
+  https://commerce.cashnet.com/cashnetg/selfserve/EditItem.aspx?PC=MSREV-MR443+&ItemCount=73
+blurbs:
+  - attribution: Steven Barthelme
+    text: >-
+      What I most admire is the way the writer managers to catch a low key
+      affection or generosity in her people. Finding it here in stories which
+      otherwise are tough as nails, it's a generosity, even a sweetness, which
+      is found only in the very best writers—Chekov, Jean Rhys, Alice Munro, a
+      few others—although it's everywhere in life ... So I read these pieces and
+      think, Yes, that's how it is. That's exactly how it is.
 ---
