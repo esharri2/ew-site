@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .cmp-button {
-  @apply text-white bg-black p-4 inline-block;
+  @apply text-white bg-brown px-4 py-8 inline-block;
 }
 
 .cmp-caption {
@@ -25,7 +25,7 @@
 }
 
 .cmp-input {
-  @apply block border-black border-solid border w-full;
+  @apply block bg-transparent border-black border-solid border w-full;
 }
 
 .cmp-link-button {
