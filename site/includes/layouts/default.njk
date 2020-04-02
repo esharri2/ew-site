@@ -46,7 +46,9 @@
             {% include "components/skip-to-content.njk" %} 
             {% include "components/header.njk" %}     
         {% endif %}    
-        <main id="main" class="mx-auto min-h-full max-w-screen-lg ">{{ content | safe }}</main>
+        <main id="main" class="mx-auto min-h-full">
+            {{ content | safe }}
+        </main>
         {% if page.fileSlug !== '' %}    
             {% include "components/back-to-top.njk" %} 
             {% include "components/footer.njk" %} 

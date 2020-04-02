@@ -16,7 +16,9 @@ module.exports = config => {
 
   // Layout alias
   config.addLayoutAlias("default", "layouts/default.njk");
+  config.addLayoutAlias("container", "layouts/container.njk");
   config.addLayoutAlias("about", "layouts/about.njk");
+
 
   // Include our static assets
   config.addPassthroughCopy("site/admin");

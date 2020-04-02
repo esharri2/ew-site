@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+button, a, input, textarea {
+  outline-color: theme('colors.green') !important;
+}
+
 .cmp-button {
-  @apply text-white bg-brown px-4 py-8 inline-block;
+  @apply text-white bg-brown px-8 py-4 inline-block;
 }
 
 .cmp-caption {
@@ -11,7 +15,7 @@
 }
 
 .cmp-h1 {
-  @apply font-title text-4xl leading-none my-4;
+  @apply font-title text-4xl leading-none my-4 text-center;
 }
 
 .cmp-h2 {
@@ -25,7 +29,15 @@
 }
 
 .cmp-input {
-  @apply block bg-transparent border-black border-solid border w-full;
+  @apply block bg-transparent p-2 border-brown border-solid border w-full;
+}
+
+.cmp-link {
+  @apply  transition-colors duration-200 border-solid border-transparent border;
+}
+
+.cmp-link:hover {
+  @apply text-green font-bold
 }
 
 .cmp-link-button {

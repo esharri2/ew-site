@@ -222,6 +222,14 @@ collections: # A list of collections the CMS should be able to edit
           required: false,
         }
       - { label: "Link", name: "link", widget: "string", required: false }
+      - {
+          label: "Publication date",
+          name: "date",
+          widget: "datetime",
+          dateFormat: "YYYY-MM-DD",
+          format: "YYYY-MM-DD",
+          required: true
+        }
   - name: "events"
     label: "Events"
     label_singular: "event"

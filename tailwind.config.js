@@ -36,6 +36,9 @@ module.exports = {
   },
   variants: {
     height: ["group-hover"],
-    opacity: ["group-hover"]
+    opacity: ["group-hover"],
+    color: ["hover"],
+    fontWeight: ["hover"],
+    outlineColor: ["focus"]
   }
 };
