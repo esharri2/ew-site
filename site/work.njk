@@ -3,29 +3,39 @@ layout: container
 eleventyNavigation:
   key: Work
   order: 1
-pagination:
-  data: collections.book
-  size: 36
-  alias: books
 ---
 
-<h1 class="cmp-h1">Books</h1>
+<h1 class="cmp-h1">Work</h1>
 
-<div class="grid grid-cols-1 md:grid-cols-4 gap-3 row-gap-6">
-  {% for book in books | reverse %}
-    <div>
-      <a class="group block relative" href="/books/{{book.data.title | slug}}">
-        <img 
-          class="w-full md:w-auto" 
-          srcset="{% srcset book.data.cover %}" 
-          src="{{book.data.cover}}"
-          sizes="(min-width: 767px) 250px, 100vw" 
-          alt="{{book.data.title}} cover art" />
-        <div class="absolute flex justify-center items-center text-xl text-white bg-black inset-x-0 top-0 h-0 opacity-0 group-hover:h-full group-hover:opacity-75 transition-height duration-200 ease-out ">Learn more</div>
-      </a>
-      <div class="text-xl text-center">{{book.data.title}}</div>
-    </div>
+<div class="mt-20">
+  {% for book in collections.book %}
+    <h2 class="cmp-h2">{{book.data.title}}</h2>
+    <p class="text-2xl font-title italic">{{book.data.publisher}}</p>
+    <div class="mt-4 flex">
+      <img class="max-w-md" srcset="{% srcset book.data.cover %}" src="{{cover}}" alt=""/>
+      <blockquote class="ml-4">
+        <p class="italic text-lg">{{book.data.blurbs[0].text}}</p>
+        <footer class="mt-2">— {{book.data.blurbs[0].attribution}}</footer>
+        <a class="cmp-link-button mt-4" href="{{purchase_link}}">Click to purchase</a>
+      </blockquote>
   {% endfor %}
 </div>
 
-{% include "./includes/components/pagination.njk" %}
+<ul class="mt-20">
+  <h2 class="mt-16 cmp-h2">Other publications<h2>
+  {% for publication in collections.publication | reverse %}
+   {{publication.data | log}}
+    <li class="pb-8">
+      <h3 class="text-lg">"{{publication.data.title}}"</h3>
+      <p class="text-md italic">{{publication.data.publisher}}</p>
+      <a class="mt-4 flex items-center fill-current" href="{{link}}">Read <span class="w-8 h-8">{{ "/site/media/icons/chevron-right.svg"| svgContents | safe }}</span></a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+
+
+
+
+
+
