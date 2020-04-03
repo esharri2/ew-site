@@ -1,5 +1,5 @@
 ---
-title: 'Seven Stories '
+title: Seven Stories
 publisher: Mississippi Review Single Author Series
 synopsis: A collection of seven short stories
 cover: /media/msrev-mr443msrev50801.jpg
