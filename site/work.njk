@@ -7,28 +7,29 @@ eleventyNavigation:
 
 <h1 class="cmp-h1">Work</h1>
 
-<div class="mt-20">
+<div class="mt-16">
   {% for book in collections.book %}
-    <h2 class="cmp-h2">{{book.data.title}}</h2>
-    <p class="text-2xl font-title italic">{{book.data.publisher}}</p>
-    <div class="mt-4 flex">
-      <img class="max-w-md" srcset="{% srcset book.data.cover %}" src="{{cover}}" alt=""/>
-      <blockquote class="ml-4">
-        <p class="italic text-lg">{{book.data.blurbs[0].text}}</p>
-        <footer class="mt-2">— {{book.data.blurbs[0].attribution}}</footer>
-        <a class="cmp-link-button mt-4" href="{{purchase_link}}">Click to purchase</a>
-      </blockquote>
+    <section>
+      <h2 class="cmp-h2 italic">{{book.data.title}}</h2>
+      <p class="text-2xl font-title">{{book.data.publisher}}</p>
+      <div class="mt-4 flex flex-col md:flex-row">
+        <img class="max-w-md mr-4 mb-4" srcset="{% srcset book.data.cover %}" src="{{cover}}" alt=""/>
+        <blockquote>
+          <p class="italic text-lg">{{book.data.blurbs[0].text}}</p>
+          <footer class="mt-2">— {{book.data.blurbs[0].attribution}}</footer>
+          <a class="cmp-link-button mt-4" href="{{book.data.purchase_link}}">Click to purchase</a>
+        </blockquote>
+      </section>
   {% endfor %}
 </div>
 
 <ul class="mt-20">
   <h2 class="mt-16 cmp-h2">Other publications<h2>
   {% for publication in collections.publication | reverse %}
-   {{publication.data | log}}
     <li class="pb-8">
       <h3 class="text-lg">"{{publication.data.title}}"</h3>
       <p class="text-md italic">{{publication.data.publisher}}</p>
-      <a class="mt-4 flex items-center fill-current" href="{{link}}">Read <span class="w-8 h-8">{{ "/site/media/icons/chevron-right.svg"| svgContents | safe }}</span></a>
+      <a class="mt-4 flex items-center fill-current" href="{{publication.data.link}}">Read <span class="w-8 h-8">{{ "/site/media/icons/chevron-right.svg"| svgContents | safe }}</span></a>
     </li>
   {% endfor %}
   </ul>

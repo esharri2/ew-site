@@ -7,7 +7,7 @@ eleventyNavigation:
 <h1 class="cmp-h1">About</h1>
 <div class="cmp-markdown">
   {% if author_image.file%}
-    <figure class="pl-2 pb-2 pt-4 md:max-w-md md:float-right">
+    <figure class="pr-4 pb-2 pt-4 md:max-w-md float-left">
         <img alt="" srcset="{% srcset author_image.file %}" src="{{author_image.file}}">
         {% if caption %}
           <figcaption class="italic flex justify-end text-sm">{{caption}}</figcaption>
@@ -16,4 +16,5 @@ eleventyNavigation:
   {% endif %}
   {{ content | safe }}
 </div>
+<div class="clear-both"></div>
 

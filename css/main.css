@@ -7,7 +7,7 @@ button, a, input, textarea {
 }
 
 .cmp-button {
-  @apply text-white bg-brown px-8 py-4 inline-block;
+  @apply text-white bg-brown px-8 py-4 inline-block transition-colors duration-200;
 }
 
 .cmp-caption {
@@ -33,7 +33,7 @@ button, a, input, textarea {
 }
 
 .cmp-link {
-  @apply  transition-colors duration-200 border-solid border-transparent border;
+  @apply transition-colors duration-200 border-solid border-transparent border;
 }
 
 .cmp-link:hover {
@@ -41,7 +41,11 @@ button, a, input, textarea {
 }
 
 .cmp-link-button {
-  @apply text-white bg-black p-4 inline-block;
+  @apply text-white bg-brown p-4 inline-block transition-colors duration-200;
+}
+
+.cmp-link-button:hover, .cmp-button:hover {
+  @apply bg-green;
 }
 
 .cmp-markdown p {
