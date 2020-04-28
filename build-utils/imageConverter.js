@@ -1,38 +1,51 @@
 const sharp = require("sharp");
 const path = require("path");
-var glob = require("glob");
+const glob = require("glob");
+const fs = require("fs");
+const del = require("del");
 
-// TODO make it so an image does not get stretched above native size
-
-const mediaDir = "./dist/media/*.*";
+const mediaDir = "./dist/media/source/*.*";
 const sizes = [
   // { tag: "xl", size: 1440 },
   { tag: "lg", size: 1080 },
   { tag: "md", size: 720 },
-  { tag: "sm", size: 480 }
+  { tag: "sm", size: 480 },
 ];
 
 const getImageNames = () => glob.sync(mediaDir);
 
-const createImages = async image => {
+const createImages = async (image) => {
   const name = path.parse(image).name;
   const ext = path.extname(image);
-
-  sizes.forEach(size => {
+  // console.log("kick off resize for ", name);
+  for (const size of sizes) {
     sharp(image)
-      .resize(size.size)
+      .resize({ width: size.size, withoutEnlargement: true })
       .toFile(`./dist/media/${name}-${size.tag}${ext}`)
       .then(() => {
+        //  console.log(`${image} has been resized`);
         return true;
+      })
+      .catch((error) => {
+        console.error(error);
       });
-  });
+  }
 };
 
 const init = () => {
   const imageNames = getImageNames();
-  imageNames.forEach(image => {
+  for (const image of imageNames) {
     createImages(image);
-  });
+  }
+
+  (async () => {
+    try {
+      const deletePaths = await del(["dist/media/source/*"]);
+      console.log(`${deletePaths.length} images have been deleted.`);
+    } catch (error) {
+      console.error(error);
+    }
+  })();
 };
 
 init();

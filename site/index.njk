@@ -2,10 +2,10 @@
 layout: default
 ---
 
-<div class="h-screen flex flex-col  items-center">
+<div class="h-screen overflow-hidden flex flex-col items-center">
   <img class="w-full md:w-1/3 lg:w-1/4" srcset="{% srcset '/media/owl-bottom.jpg' %}"/ src="/media/owl-bottom.jpg">
   <div class="flex flex-auto flex-col justify-center items-center">
-    <h1 class="text-brown font-title text-6xl uppercase mb-0">{{general.site_title}}</h1>
+    <h1 class="text-brown leading-none text-center font-title text-6xl uppercase mb-0">{{general.site_title}}</h1>
     {% if general.site_subtitle %}
       <p class="text-brown font-title -mt-4">{{general.site_subtitle}}</p>
     {% endif %}

@@ -49,8 +49,8 @@
         <main id="main" class="mx-auto min-h-full">
             {{ content | safe }}
         </main>
-        {% if page.fileSlug !== '' %}    
             {% include "components/back-to-top.njk" %} 
+        {% if page.fileSlug !== '' %}    
             {% include "components/footer.njk" %} 
         {% endif %}    
 
