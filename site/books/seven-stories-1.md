@@ -4,7 +4,7 @@ publisher: Mississippi Review Single Author Series
 synopsis: A collection of seven short stories
 cover: /media/msrev-mr443msrev50801.jpg
 date: 2020-05-03T00:00:00.000Z
-purchase_link: https://commerce.cashnet.com/cashneti/selfserve/BrowseCatalog.aspx?CNAME=MAG+++++++++
+purchase_link: http://sites.usm.edu/mississippi-review/issues.html
 blurbs:
   - attribution: Steven Barthelme
     text: What I most admire is the way the writer managers to catch a low key
