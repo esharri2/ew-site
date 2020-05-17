@@ -3,8 +3,8 @@ title: Seven Stories
 publisher: Mississippi Review Single Author Series
 synopsis: A collection of seven short stories
 cover: /media/msrev-mr443msrev50801.jpg
-date: 2020-05-03
-purchase_link: https://commerce.cashnet.com/cashnetg/selfserve/EditItem.aspx?PC=MSREV-MR443+&ItemCount=73
+date: 2020-05-03T00:00:00.000Z
+purchase_link: https://commerce.cashnet.com/cashneti/selfserve/BrowseCatalog.aspx?CNAME=MAG+++++++++
 blurbs:
   - attribution: Steven Barthelme
     text: What I most admire is the way the writer managers to catch a low key
